@@ -1,5 +1,4 @@
 import {createContext, ReactNode, useState} from "react";
-import {useNavigate} from "react-router-dom";
 
 type Props = {
     children?: ReactNode;
@@ -21,7 +20,6 @@ const AuthContext = createContext<AuthContextType>(initialValue);
 const AuthProvider = ({children}: Props) => {
     const [authenticated, setAuthenticated] = useState(initialValue.authenticated);
 
-    const navigate = useNavigate();
 
     return (
         <AuthContext.Provider value={{authenticated, setAuthenticated}}>
