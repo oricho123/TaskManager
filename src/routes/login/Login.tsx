@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import {AuthContext} from "../../context/AuthContext";
 import {useNavigate} from "react-router-dom";
+import {ThemedButton} from "../../components/buttons/ThemedButton";
 
-type LoginPropTypes = {};
 
 const fakeAuth = () => {
     return new Promise<string>((resolve) => {
@@ -10,7 +10,7 @@ const fakeAuth = () => {
     });
 };
 
-const Login = (props: LoginPropTypes) => {
+const Login = () => {
     const {setToken} = useContext(AuthContext);
 
     const navigate = useNavigate();
@@ -23,7 +23,7 @@ const Login = (props: LoginPropTypes) => {
     }
     return (
         <div>
-            <button onClick={handleLogin}>Authenticate</button>
+            <ThemedButton onClick={handleLogin}>Authenticate</ThemedButton>
         </div>
     );
 }
