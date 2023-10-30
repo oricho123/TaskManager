@@ -6,7 +6,6 @@ import Login from "./login/Login";
 
 const PrivateRoutes = () => {
     const {token} = useContext(AuthContext)
-    console.log(token)
     if (!token)
         return <Navigate to='/login' replace/>
     return <Outlet/>
