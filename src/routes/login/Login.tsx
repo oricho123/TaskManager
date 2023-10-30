@@ -11,7 +11,6 @@ const Login = (props: LoginPropTypes) => {
 
     const handleLogin = () => {
         setAuthenticated(true);
-        console.log('fuck')
         navigate('/');
     }
     return (
