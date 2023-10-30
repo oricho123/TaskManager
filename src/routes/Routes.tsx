@@ -5,8 +5,9 @@ import App from "../App";
 import Login from "./login/Login";
 
 const PrivateRoutes = () => {
-    const {authenticated} = useContext(AuthContext)
-    if (!authenticated)
+    const {token} = useContext(AuthContext)
+    console.log(token)
+    if (!token)
         return <Navigate to='/login' replace/>
     return <Outlet/>
 }

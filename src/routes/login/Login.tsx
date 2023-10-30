@@ -4,13 +4,21 @@ import {useNavigate} from "react-router-dom";
 
 type LoginPropTypes = {};
 
+const fakeAuth = () => {
+    return new Promise<string>((resolve) => {
+        setTimeout(() => resolve('2342f2f1d131rf12'), 250);
+    });
+};
+
 const Login = (props: LoginPropTypes) => {
-    const {setAuthenticated} = useContext(AuthContext);
+    const {setToken} = useContext(AuthContext);
 
     const navigate = useNavigate();
 
-    const handleLogin = () => {
-        setAuthenticated(true);
+    const handleLogin = async () => {
+        const token = await fakeAuth();
+
+        setToken(token);
         navigate('/');
     }
     return (

@@ -5,24 +5,24 @@ type Props = {
 }
 
 type AuthContextType = {
-    authenticated: boolean;
-    setAuthenticated: (newState: boolean) => void;
-}
+    token: string | null;
+    setToken: (newState: string | null) => void;
+};
 
 const initialValue = {
-    authenticated: false,
-    setAuthenticated: () => {
+    token: null,
+    setToken: () => {
     }
-}
+};
 
 const AuthContext = createContext<AuthContextType>(initialValue);
 
 const AuthProvider = ({children}: Props) => {
-    const [authenticated, setAuthenticated] = useState(initialValue.authenticated);
+    const [token, setToken] = useState<string | null>(initialValue.token);
 
 
     return (
-        <AuthContext.Provider value={{authenticated, setAuthenticated}}>
+        <AuthContext.Provider value={{token, setToken}}>
             {children}
         </AuthContext.Provider>
     )
