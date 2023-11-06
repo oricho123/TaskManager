@@ -2,7 +2,8 @@ import React, {useContext} from 'react';
 import {AuthContext} from "../../context/AuthContext";
 import {useNavigate} from "react-router-dom";
 import {ThemedButton} from "../../components/buttons/ThemedButton";
-
+import defaultBannerImage from "./assets/bg.jpeg"
+import styles from "./styles.module.css"
 
 const fakeAuth = () => {
     return new Promise<string>((resolve) => {
@@ -17,13 +18,24 @@ const Login = () => {
 
     const handleLogin = async () => {
         const token = await fakeAuth();
-
         setToken(token);
         navigate('/');
     }
+
     return (
-        <div>
-            <ThemedButton onClick={handleLogin}>Authenticate</ThemedButton>
+        <div className={styles["login-page"]}>
+            <aside style={{backgroundImage: `url(${defaultBannerImage})`}} className={styles["login-page-banner"]}>
+            </aside>
+            <main>
+                <header>
+                    <h1>Hello</h1>
+                </header>
+                <input/>
+                <section>
+                    <button>test</button>
+                    <ThemedButton onClick={handleLogin}>Authenticate</ThemedButton>
+                </section>
+            </main>
         </div>
     );
 }
