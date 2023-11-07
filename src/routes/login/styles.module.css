@@ -15,13 +15,19 @@ aside {
 
 main {
     flex-basis: 50%;
-    box-sizing: border-box;
-    padding: 2% 4%;
     background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: var(--gap);
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 2% 4%;
+}
+
+header > h1 {
+    margin-block-start: 0;
 }
 
 section {
@@ -48,5 +54,9 @@ section {
 @media (max-width: 600px) {
     .login-page-banner {
         display: none;
+    }
+
+    .login-page > main {
+        flex-basis: 100%
     }
 }
