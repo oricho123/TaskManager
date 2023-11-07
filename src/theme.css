@@ -2,4 +2,6 @@ body {
     --bg-color: #282c34;
     --text-color: white;
     --gap: 0.37rem;
+    --button-bg: #b08bf8;
+    --button-bg-hover: #a885ec;
 }
