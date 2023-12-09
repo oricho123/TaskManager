@@ -24,17 +24,18 @@ const Login = () => {
 
     return (
         <div className={styles["login-page"]}>
-            <aside style={{backgroundImage: `url(${defaultBannerImage})`}} className={styles["login-page-banner"]}>
-            </aside>
+            <aside style={{backgroundImage: `url(${defaultBannerImage})`}} className={styles["login-page-banner"]}/>
             <main>
-                <header>
-                    <h1>Hello</h1>
-                </header>
-                <input/>
-                <section>
-                    <button>test</button>
-                    <ThemedButton onClick={handleLogin}>Authenticate</ThemedButton>
-                </section>
+                <form className={styles["login-form"]}>
+                    <header>
+                        <h1>Hello</h1>
+                    </header>
+                    <input/>
+                    <section>
+                        <button>test</button>
+                        <ThemedButton onClick={handleLogin}>Authenticate</ThemedButton>
+                    </section>
+                </form>
             </main>
         </div>
     );
