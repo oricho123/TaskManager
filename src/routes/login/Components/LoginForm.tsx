@@ -3,6 +3,7 @@ import {AuthContext} from "../../../context/AuthContext";
 import {useNavigate} from "react-router-dom";
 import {ThemedButton} from "../../../components/buttons/ThemedButton";
 import "./styles.module.css"
+import {ThemedTextInput} from "../../../components/input/ThemedTextInput";
 
 
 const fakeAuth = (formData: FormData) => {
@@ -14,13 +15,12 @@ const fakeAuth = (formData: FormData) => {
 
 const LoginForm = () => {
     const {setToken} = useContext(AuthContext);
-
     const navigate = useNavigate();
 
     const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget)
-        console.log(formData);
+
         const token = await fakeAuth(formData);
         setToken(token);
 
@@ -32,10 +32,7 @@ const LoginForm = () => {
             <header>
                 <h1>Hello</h1>
             </header>
-            <label htmlFor="username">Username</label><br/>
-            <input type="text" id="username" name="username"/><br/>
-            <label htmlFor="password">Password</label><br/>
-            <input type="text" id="password" name="password"/>
+            <ThemedTextInput placeholder='Password' name='password' id='password'/>
             <ThemedButton type='submit'>Authenticate</ThemedButton>
             <section>
                 <a href="tempurl">Can't remember username?</a>

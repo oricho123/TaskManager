@@ -1,0 +1,59 @@
+.input-group {
+    position: relative;
+    padding: 20px 0 0;
+    width: 100%;
+    max-width: 180px;
+}
+
+.field {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 17px;
+    color: var(--text-color);
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.field::placeholder {
+    color: transparent;
+}
+
+.field:placeholder-shown ~ .label {
+    font-size: 17px;
+    cursor: text;
+    top: 27px;
+}
+
+.label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #9b9b9b;
+    pointer-events: none;
+}
+
+.field:focus {
+    font-weight: 500;
+    border-color: var(--primary);
+}
+
+.field:focus ~ .label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* reset input */
+.field:required, .field:invalid {
+    box-shadow: none;
+}
