@@ -3,14 +3,14 @@
     width: 100%;
     height: 100%;
     color: var(--text-color);
+    transition: padding 0.2s;
 }
 
 aside {
     flex-basis: 50%;
-}
-
-.login-page-banner {
     background-size: cover;
+    transition: flex-basis 0.2s;
+
 }
 
 main {
@@ -19,23 +19,6 @@ main {
     background-color: var(--bg-color);
 }
 
-.login-form {
-    display: flex;
-    margin: 33% auto auto;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--gap);
-    transition: margin .2s;
-}
-
-header * {
-    margin-top: unset;
-}
-
-section {
-    display: flex;
-    gap: var(--gap);
-}
 
 @media (min-width: 2000px) {
     .login-page {
@@ -43,25 +26,18 @@ section {
         box-sizing: border-box;
     }
 
-    .login-form {
-        margin-top: 50%;
-    }
-
     .login-page > main {
         border-radius: 0 20px 20px 0;
     }
 
-    .login-page .login-page-banner {
+    .login-page > aside {
         border-radius: 20px 0 0 20px;
     }
 }
 
 @media (max-width: 600px) {
     aside {
-        display: none;
+        flex-basis: 0;
     }
 
-    .login-form {
-        margin: auto;
-    }
 }

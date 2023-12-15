@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import {AuthContext} from "../context/AuthContext";
 import {createBrowserRouter, Navigate, Outlet} from "react-router-dom";
 import App from "../App";
-import Login from "./login/Login";
+import LoginPage from "./login/LoginPage";
 
 const PrivateRoutes = () => {
     const {token} = useContext(AuthContext)
@@ -14,7 +14,7 @@ const PrivateRoutes = () => {
 export const Routes = createBrowserRouter([
     {
         path: "/login",
-        element: <Login/>,
+        element: <LoginPage/>,
     },
     {
         element: <PrivateRoutes/>,
