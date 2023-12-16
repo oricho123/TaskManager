@@ -1,34 +1,16 @@
-import React, {useContext} from 'react';
-import {AuthContext} from "../../../context/AuthContext";
-import {useNavigate} from "react-router-dom";
+import React, {FC, FormEventHandler} from 'react';
 import {ThemedButton} from "../../../components/buttons/ThemedButton";
 import "./styles.module.css"
 import {ThemedTextInput} from "../../../components/input/ThemedTextInput";
 
+interface LoginProps {
+    onSubmit: FormEventHandler<HTMLFormElement>,
+}
 
-const fakeAuth = (formData: FormData) => {
-    console.log(formData.get('password'))
-    return new Promise<string>((resolve) => {
-        setTimeout(() => resolve('2342f2f1d131rf12'), 250);
-    });
-};
-
-const LoginForm = () => {
-    const {setToken} = useContext(AuthContext);
-    const navigate = useNavigate();
-
-    const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        const formData = new FormData(event.currentTarget)
-
-        const token = await fakeAuth(formData);
-        setToken(token);
-
-        navigate('/')
-    }
+const LoginForm: FC<LoginProps> = (props) => {
 
     return (
-        <form onSubmit={handleLogin}>
+        <form onSubmit={props.onSubmit}>
             <header>
                 <h1>Hello</h1>
             </header>
