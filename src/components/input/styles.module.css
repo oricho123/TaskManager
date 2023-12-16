@@ -57,3 +57,7 @@
 .field:required, .field:invalid {
     box-shadow: none;
 }
+
+.full-width {
+    max-width: unset;
+}
