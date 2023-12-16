@@ -1,6 +1,5 @@
 form {
     display: flex;
-    margin: 33% auto auto;
     flex-direction: column;
     align-items: center;
     gap: var(--gap);
@@ -14,16 +13,4 @@ header * {
 section {
     display: flex;
     gap: var(--gap);
-}
-
-@media (min-width: 2000px) {
-    form {
-        margin-top: 50%;
-    }
-}
-
-@media (max-width: 600px) {
-    form {
-        margin: unset;
-    }
 }
