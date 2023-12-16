@@ -9,8 +9,8 @@ export interface ThemedTextInputProps extends ComponentProps<"input"> {
 }
 
 
-export const ThemedTextInput = ({children, id, placeholder, ...props}: ThemedTextInputProps) => {
-    const groupClasses = `${styles['input-group']} ${props.fullWidth ? styles['full-width'] : null}`
+export const ThemedTextInput = ({id, placeholder, fullWidth, ...props}: ThemedTextInputProps) => {
+    const groupClasses = `${styles['input-group']} ${fullWidth ? styles['full-width'] : null}`
     return (
         <div className={groupClasses}>
             <input type="input" id={id} className={styles["field"]} placeholder={placeholder} {...props}/>
