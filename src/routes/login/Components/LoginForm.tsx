@@ -1,7 +1,7 @@
 import React, {FC, FormEventHandler} from 'react';
 import {ThemedButton} from "../../../components/buttons/ThemedButton";
 import "./styles.module.css"
-import {ThemedTextInput} from "../../../components/input/ThemedTextInput";
+import {ThemedTextInput} from "../../../components/input/text/ThemedTextInput";
 
 interface LoginProps {
     onSubmit: FormEventHandler<HTMLFormElement>,
@@ -26,3 +26,4 @@ const LoginForm: FC<LoginProps> = (props) => {
 }
 
 export default LoginForm;
+
