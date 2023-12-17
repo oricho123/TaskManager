@@ -2,6 +2,7 @@ import React, {FC, FormEventHandler} from 'react';
 import {ThemedButton} from "../../../components/buttons/ThemedButton";
 import "./styles.module.css"
 import {ThemedTextInput} from "../../../components/input/text/ThemedTextInput";
+import {ThemedCheckBox} from "../../../components/input/checkbox/ThemedCheckBox";
 
 interface LoginProps {
     onSubmit: FormEventHandler<HTMLFormElement>,
@@ -16,6 +17,7 @@ const LoginForm: FC<LoginProps> = (props) => {
             </header>
             <ThemedTextInput fullWidth placeholder='Username' name='username' id='username'/>
             <ThemedTextInput fullWidth placeholder='Password' name='password' id='password'/>
+            <ThemedCheckBox label='Remember me' id='remember' name='remember'/>
             <ThemedButton type='submit'>Authenticate</ThemedButton>
             <section>
                 <a href="tempurl">Can't remember username?</a>
