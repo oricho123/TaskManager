@@ -17,7 +17,7 @@ const LoginForm: FC<LoginProps> = (props) => {
             </header>
             <ThemedTextInput fullWidth placeholder='Username' name='username' id='username'/>
             <ThemedTextInput fullWidth placeholder='Password' name='password' id='password'/>
-            <ThemedCheckBox label='Remember me' id='remember' name='remember'/>
+            <ThemedCheckBox label='Remember me' id='remember_me' name='remember_me'/>
             <ThemedButton type='submit'>Authenticate</ThemedButton>
             <section>
                 <a href="tempurl">Can't remember username?</a>

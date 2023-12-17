@@ -19,10 +19,12 @@ const LoginPage = () => {
     const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget)
-
         const token = await fakeAuth(formData);
-        setToken(token);
 
+        if (formData.get('remember_me'))
+            setToken(token);
+        else
+            setToken(token, 0);
         navigate('/')
     }
 

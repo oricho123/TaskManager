@@ -1,12 +1,13 @@
-import {createContext, ReactNode, useState} from "react";
+import {createContext, ReactNode} from "react";
+import useCookie from "../utilities/cookies";
 
-type Props = {
+type providerProps = {
     children?: ReactNode;
 }
 
 type AuthContextType = {
     token: string | null;
-    setToken: (newState: string | null) => void;
+    setToken: (value: string, expires_ms?: number) => void;
 };
 
 const initialValue = {
@@ -17,8 +18,8 @@ const initialValue = {
 
 const AuthContext = createContext<AuthContextType>(initialValue);
 
-const AuthProvider = ({children}: Props) => {
-    const [token, setToken] = useState<string | null>(initialValue.token);
+const AuthProvider = ({children}: providerProps) => {
+    const [token, setToken] = useCookie('token');
 
 
     return (
