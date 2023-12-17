@@ -20,18 +20,18 @@ const LoggedOutOnly = () => {
 
 export const Routes = createBrowserRouter([
     {
-        element: <LoggedOutOnly/>,
-        children: [{
-            path: "/login",
-            element: <LoginPage/>,
-        }]
-    },
-    {
         element: <PrivateRoutes/>,
         errorElement: <Navigate to='/'/>,
         children: [{
             path: "/",
             element: <App/>
+        }]
+    },
+    {
+        element: <LoggedOutOnly/>,
+        children: [{
+            path: "/login",
+            element: <LoginPage/>,
         }]
     },
 ]);

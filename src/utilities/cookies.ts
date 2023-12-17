@@ -14,6 +14,17 @@ export default function useCookie(name: string): [string | null, (value: string,
         return sessionStorage.getItem(name) || null;
     })
 
+    const deleteCookie = useCallback(
+        () => {
+            sessionStorage.removeItem(name)
+            // Set cookie to expire in -1 days
+            const date = new Date();
+            date.setTime(date.getTime() + (-1 * 24 * 60 * 60 * 1000));
+            document.cookie = name + "=; expires=" + date.toUTCString() + "; path=/";
+            setValue(null)
+        },
+        [name])
+
     const setCookie = useCallback(
         (value: string, expires_ms: number = 7 * 24 * 60 * 60 * 1000) => {
             if (expires_ms === 0) {
@@ -26,16 +37,7 @@ export default function useCookie(name: string): [string | null, (value: string,
             }
             setValue(value)
         },
-        [name]
-    )
-
-    const deleteCookie = useCallback(() => {
-        const date = new Date();
-        // Set it expire in -1 days
-        date.setTime(date.getTime() + (-1 * 24 * 60 * 60 * 1000));
-        document.cookie = name + "=; expires=" + date.toUTCString() + "; path=/";
-        setValue(null)
-    }, [name])
+        [name, deleteCookie])
 
     return [value, setCookie, deleteCookie]
 }
