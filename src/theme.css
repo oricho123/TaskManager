@@ -1,8 +1,20 @@
 body {
     --bg-color: #282c34;
     --text-color: white;
-    --gap: 0.37rem;
+    --gap: 1rem;
     --primary: #015c90;
     --button-bg: #b08bf8;
     --button-bg-hover: #a885ec;
+}
+
+a:link {
+    color: var(--primary);
+}
+
+a:visited {
+    color: var(--button-bg);
+}
+
+a:hover {
+    color: var(--button-bg-hover);
 }
