@@ -11,10 +11,21 @@ const PrivateRoutes = () => {
     return <Outlet/>
 }
 
+const LoggedOutOnly = () => {
+    const {token} = useContext(AuthContext)
+    if (token)
+        return <Navigate to='/' replace/>
+    return <Outlet/>
+}
+
 export const Routes = createBrowserRouter([
     {
         path: "/login",
-        element: <LoginPage/>,
+        element: <LoggedOutOnly/>,
+        children: [{
+            path: "/login",
+            element: <LoginPage/>,
+        }]
     },
     {
         element: <PrivateRoutes/>,
