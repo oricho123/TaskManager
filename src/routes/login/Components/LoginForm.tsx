@@ -1,4 +1,4 @@
-import React, {FC, FormEventHandler} from 'react';
+import React, {FC, FormEventHandler, useState} from 'react';
 import {ThemedButton} from "../../../components/buttons/ThemedButton";
 import "./styles.module.css"
 import {ThemedTextInput} from "../../../components/input/text/ThemedTextInput";
@@ -9,16 +9,22 @@ interface LoginProps {
 }
 
 const LoginForm: FC<LoginProps> = (props) => {
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+    const handleOnSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        setIsLoading(true)
+        await props.onSubmit(event);
+        setIsLoading(false)
+    }
 
     return (
-        <form onSubmit={props.onSubmit}>
+        <form onSubmit={handleOnSubmit}>
             <header>
                 <h1>Hello</h1>
             </header>
             <ThemedTextInput required fullWidth placeholder='Username' name='username' id='username'/>
             <ThemedTextInput required fullWidth placeholder='Password' name='password' id='password'/>
             <ThemedCheckBox label='Remember me' id='remember_me' name='remember_me'/>
-            <ThemedButton type='submit'>Authenticate</ThemedButton>
+            <ThemedButton isLoading={isLoading} type='submit'>Authenticate</ThemedButton>
             <section>
                 <a href="tempurl">Can't remember username?</a>
                 <a href="tempurl">New to this site?</a>
