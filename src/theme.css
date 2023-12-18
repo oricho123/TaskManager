@@ -5,6 +5,7 @@ body {
     --primary: #015c90;
     --button-bg: #b08bf8;
     --button-bg-hover: #a885ec;
+    --error: #be2b2b;
 }
 
 a:link {
