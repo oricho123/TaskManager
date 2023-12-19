@@ -1,0 +1,19 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap);
+    transition: margin .2s;
+}
+
+header * {
+    margin-top: unset;
+}
+
+section {
+    display: flex;
+    gap: var(--gap);
+}
+
+
+
