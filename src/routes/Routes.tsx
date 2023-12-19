@@ -3,6 +3,7 @@ import {AuthContext} from "../context/AuthContext";
 import {createBrowserRouter, Navigate, Outlet} from "react-router-dom";
 import App from "../App";
 import LoginPage from "./login/LoginPage";
+import {MainPage} from "./main/MainPage";
 
 const PrivateRoutes = () => {
     const {token} = useContext(AuthContext)
@@ -24,7 +25,7 @@ export const Routes = createBrowserRouter([
         errorElement: <Navigate to='/'/>,
         children: [{
             path: "/",
-            element: <App/>
+            element: <MainPage/>
         }]
     },
     {
