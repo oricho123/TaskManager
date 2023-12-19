@@ -1,0 +1,64 @@
+.themed-button {
+    text-align: -webkit-center;
+    width: 117px;
+    height: 36px;
+    border-radius: 24px;
+    padding: 10px 21px;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    box-shadow: 0 2px 6px -1px rgba(0, 0, 0, 0.13);
+    border: 0;
+    transition: box-shadow .15s, transform .15s, background-color .15s, width 0.3s;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    overflow: hidden;
+}
+
+.themed-button:focus {
+    box-shadow: rgb(150, 116, 168) 0 -3px 0 inset;
+}
+
+.themed-button:hover:not(:disabled) {
+    background-color: var(--button-bg-hover);
+    transform: translateY(-2px);
+    box-shadow: rgba(150, 116, 168, 0.5) 0 2px 6px;
+}
+
+.themed-button:active:not(:disabled) {
+    box-shadow: rgb(150, 116, 206) 0 3px 7px inset;
+    transform: translateY(0);
+}
+
+.themed-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.75;
+}
+
+.themed-button .text {
+    opacity: 1;
+    position: relative;
+    transition: opacity 0.5s, top 0.5s;
+    top: 0;
+}
+
+#loading-dots {
+    transition: opacity 0.5s, top 0.5s;
+    top: -100px;
+    opacity: 0;
+}
+
+.loading {
+    width: 80px;
+}
+
+.loading .text {
+    opacity: 0;
+    top: 100px;
+}
+
+.loading #loading-dots {
+    opacity: 1;
+    top: -12px;
+}

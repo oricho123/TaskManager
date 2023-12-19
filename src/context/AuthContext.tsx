@@ -1,30 +1,32 @@
-import {createContext, ReactNode, useState} from "react";
-import {useNavigate} from "react-router-dom";
+import {createContext, ReactNode} from "react";
+import useCookie from "../utilities/cookies";
 
-type Props = {
+type providerProps = {
     children?: ReactNode;
 }
 
 type AuthContextType = {
-    authenticated: boolean;
-    setAuthenticated: (newState: boolean) => void;
-}
+    token: string | null;
+    setToken: (value: string, expires_ms?: number) => void;
+    deleteToken: () => void;
+};
 
 const initialValue = {
-    authenticated: false,
-    setAuthenticated: () => {
+    token: null,
+    setToken: () => {
+    },
+    deleteToken: () => {
     }
-}
+};
 
 const AuthContext = createContext<AuthContextType>(initialValue);
 
-const AuthProvider = ({children}: Props) => {
-    const [authenticated, setAuthenticated] = useState(initialValue.authenticated);
+const AuthProvider = ({children}: providerProps) => {
+    const [token, setToken, deleteToken] = useCookie('token');
 
-    const navigate = useNavigate();
 
     return (
-        <AuthContext.Provider value={{authenticated, setAuthenticated}}>
+        <AuthContext.Provider value={{token, setToken, deleteToken}}>
             {children}
         </AuthContext.Provider>
     )

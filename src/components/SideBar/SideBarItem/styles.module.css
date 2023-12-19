@@ -1,0 +1,5 @@
+.item-wrapper {
+    display: flex;
+    align-items: end;
+    gap: var(--gap);
+}
