@@ -1,7 +1,8 @@
 body {
     --bg-color: #282c34;
     --text-color: white;
-    --gap: 1rem;
+    --form-gap: 1rem;
+    --items-gap: 0.37rem;
     --primary: #015c90;
     --button-bg: #b08bf8;
     --button-bg-hover: #a885ec;
