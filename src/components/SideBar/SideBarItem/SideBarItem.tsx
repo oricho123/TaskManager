@@ -11,9 +11,9 @@ type SideBarItemProps = {
 
 export function SideBarItem({label, icon}: SideBarItemProps) {
     return (
-        <div className={styles['item-wrapper']}>
+        <button className={styles['item-wrapper']}>
             <FontAwesomeIcon icon={icon}/>
-            <div>{label}</div>
-        </div>
+            <div className={styles['item-label']}>{label}</div>
+        </button>
     );
 }

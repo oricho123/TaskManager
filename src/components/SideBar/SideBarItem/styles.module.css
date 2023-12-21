@@ -1,5 +1,24 @@
 .item-wrapper {
     display: flex;
     align-items: end;
-    gap: var(--gap);
+    border: none;
+    background: none;
+    padding-block: 7px;
+    padding-inline: 17px;
+    transition: background-color 0.2s;
+    border-radius: 2px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.item-wrapper:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.item-label {
+    text-align: left;
+    overflow: hidden;
+    margin-left: 0.5rem;
+    width: 5rem;
+    transition: width 1s;
 }
