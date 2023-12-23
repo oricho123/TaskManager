@@ -7,13 +7,17 @@ import {IconDefinition} from '@fortawesome/free-solid-svg-icons'
 type SideBarItemProps = {
     icon: IconDefinition;
     label: string;
+    isActive?: boolean;
+    isOpen?: boolean;
 }
 
-export function SideBarItem({label, icon}: SideBarItemProps) {
+export function SideBarItem({label, icon, isActive = false, isOpen = true}: SideBarItemProps) {
+    const buttonClasses = `${styles['item-wrapper']} ${isActive ? styles['active'] : ''}`
+    const labelClasses = `${styles['item-label']} ${isOpen ? styles['open'] : ''}`
     return (
-        <button className={styles['item-wrapper']}>
+        <button className={buttonClasses}>
             <FontAwesomeIcon icon={icon}/>
-            <div className={styles['item-label']}>{label}</div>
+            <div className={labelClasses}>{label}</div>
         </button>
     );
 }

@@ -12,10 +12,34 @@
     flex-direction: column;
     justify-content: space-between;
     border-right: 1px solid grey;
+    position: sticky;
+    z-index: 3;
 }
 
 .sidebar-wrapper > div {
     gap: var(--items-gap);
     flex-direction: column;
     display: flex;
+}
+
+.sidebar-toggle {
+    z-index: 1;
+    padding: 2px;
+    position: absolute;
+    right: 0;
+    width: unset;
+    line-height: 0;
+    border-radius: 1rem;
+    transform: translate(50%, -50%) !important;
+    cursor: pointer;
+    padding-block: 0;
+    padding-inline: 3px;
+}
+
+.sidebar-toggle > svg {
+    transition: transform .25s;
+}
+
+.sidebar-toggle.toggled > svg {
+    transform: rotate(180deg);
 }

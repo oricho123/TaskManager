@@ -18,7 +18,25 @@
 .item-label {
     text-align: left;
     overflow: hidden;
-    margin-left: 0.5rem;
-    width: 5rem;
-    transition: width 1s;
+    width: 0;
+    transition: margin-left .25s, width .25s;
 }
+
+.item-label.open {
+    width: 5rem;
+    margin-left: 0.5rem;
+}
+
+.active {
+    background: var(--primary);
+}
+
+.active:hover {
+    background: var(--primary-light);
+}
+
+.active .item-label {
+    font-weight: 700;
+    color: var(--button-bg);
+}
+
