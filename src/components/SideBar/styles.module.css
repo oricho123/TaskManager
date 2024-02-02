@@ -37,7 +37,7 @@
 }
 
 .sidebar-toggle > svg {
-    transition: transform .25s;
+    transition: transform 0.25s;
 }
 
 .sidebar-toggle.toggled > svg {

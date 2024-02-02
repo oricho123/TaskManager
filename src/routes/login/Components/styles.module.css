@@ -3,7 +3,7 @@ form {
     flex-direction: column;
     align-items: center;
     gap: var(--form-gap);
-    transition: margin .2s;
+    transition: margin 0.2s;
 }
 
 header * {
@@ -14,6 +14,3 @@ section {
     display: flex;
     gap: var(--form-gap);
 }
-
-
-

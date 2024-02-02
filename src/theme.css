@@ -1,23 +1,23 @@
 body {
-    --bg-color: #282c34;
-    --text-color: white;
-    --form-gap: 1rem;
-    --items-gap: 0.37rem;
-    --primary: #015c90;
-    --primary-light: #017690;
-    --button-bg: #b08bf8;
-    --button-bg-hover: #a885ec;
-    --error: #be2b2b;
+  --bg-color: #282c34;
+  --text-color: white;
+  --form-gap: 1rem;
+  --items-gap: 0.37rem;
+  --primary: #015c90;
+  --primary-light: #017690;
+  --button-bg: #b08bf8;
+  --button-bg-hover: #a885ec;
+  --error: #be2b2b;
 }
 
 a:link {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 a:visited {
-    color: var(--button-bg);
+  color: var(--button-bg);
 }
 
 a:hover {
-    color: var(--button-bg-hover);
+  color: var(--button-bg-hover);
 }

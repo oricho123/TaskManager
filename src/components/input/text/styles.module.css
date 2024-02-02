@@ -54,7 +54,8 @@
 }
 
 /* reset input */
-.field:required, .field:invalid {
+.field:required,
+.field:invalid {
     box-shadow: none;
 }
 
@@ -62,7 +63,10 @@
     max-width: unset;
 }
 
-.error .field, .error .field:focus, .error .field + label, .error .field:focus + .label {
+.error .field,
+.error .field:focus,
+.error .field + label,
+.error .field:focus + .label {
     border-color: var(--error);
     color: var(--error);
 }
@@ -71,15 +75,18 @@
     animation: shake 0.7s;
 }
 
-
 @keyframes shake {
-    20%, 80% {
+    20%,
+    80% {
         transform: translate3d(2px, 0, 0);
     }
-    30%, 50%, 70% {
+    30%,
+    50%,
+    70% {
         transform: translate3d(-4px, 0, 0);
     }
-    40%, 60% {
+    40%,
+    60% {
         transform: translate3d(4px, 0, 0);
     }
 }

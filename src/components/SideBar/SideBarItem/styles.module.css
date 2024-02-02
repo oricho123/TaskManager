@@ -19,7 +19,8 @@
     text-align: left;
     overflow: hidden;
     width: 0;
-    transition: margin-left .25s, width .25s;
+    transition: margin-left 0.25s,
+    width 0.25s;
 }
 
 .item-label.open {
@@ -39,4 +40,3 @@
     font-weight: 700;
     color: var(--button-bg);
 }
-
